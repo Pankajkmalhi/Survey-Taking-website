@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Survey</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="row justify-content-center mt-4">
+      <div class="col-md-8 text-center animate__animated animate__fadeInLeft">
+        <h1 class="mb-4">Survey</h1>
+        <form action="submit.php" method="POST">
+        <div class="question-page active" id="page1">
+          <div class="card mt-4 animate__animated animate__fadeInLeft">
+            <div class="card-body">
+             <div style="background-color: #007bff;">
+              <h5 class="card-title"> What is your gender?</h5>
+                    </div>  
+                    <br>
+                    <div class="form-group">
+                      <select class="form-control" name="gender" id="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                      </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mt-4 animate__animated animate__fadeInLeft">
+            <div class="card-body">
+                <div style="background-color: #007bff;">
+               <h5 class="card-title"> How old are you?</h5>
+                    </div>  
+                    <br>
+                    <div class="form-group">
+                      <input type="text" class="form-control" name="age" id="age">
+              </div>
+            </div>
+          </div>
+
+
+          <div class="card mt-4 animate__animated animate__fadeInLeft">
+            <div class="card-body">
+                
+               <div style="background-color: #007bff; border-color: #007bff;">
+           <h5 class="card-title"> What year are you currently studying in?</h5>
+                    </div>  
+                    <br>
+              <div class="form-group">
+                <select class="form-control" name="year1" id="year1">
+                  <option value="Strongly Disagree">Foundation</option>
+                  <option value="Disagree">Second</option>
+                  <option value="Neutral">Third</option>
+                  <option value="Agree">Fourth</option>
+                 
+                </select>
+                    </div>
+                  </div>
+                </div>
+           
+
+
+          <div class="card mt-4 animate__animated animate__fadeInLeft">
+            <div class="card-body">
+                <div style="background-color: #007bff;">
+               <h5 class="card-title"> What course are you studying?</h5>
+                    </div>  
+                    <br>
+                    <div class="form-group">
+                      <input type="text" class="form-control" name="course" id="course">
+              </div>
+            </div>
+          </div>
+
+          <div class="card mt-4 animate__animated animate__fadeInLeft">
+            <div class="card-body">
+                <div style="background-color: #007bff;">
+               <h5 class="card-title"> 	What is your average grade for the year?</h5>
+                    </div>  
+                    <br>
+                    <div class="form-group">
+                      <input type="text" class="form-control" name="grade" id="grade">
+              </div>
+            </div>
+          </div>
+
+          <a href="javascript:history.back()"  class="btn btn-secondary mt-lg-4">Back</a>
+          <button type="button" class="btn btn-primary mt-lg-4" onclick="showPage(2)">Next</button>
+        </div>
+
+         <!-- Page 2 -->
+    <div id="page2" style="display:none;">
+          <div class="card mt-4 animate__animated animate__fadeInLeft">
+            <div class="card-body">
+                <div style="background-color: #007bff;">
+              <h5 class="card-title">Question 1:	Do you find computing courses more interesting than non-computing ones?
+            </h5>
+            </div>  
+            <br>
+              <div class="form-group">
+                <select class="form-control" name="question1" id="question1">
+                  <option value="Strongly Disagree">Strongly Disagree</option>
+                  <option value="Disagree">Disagree</option>
+                  <option value="Neutral">Neutral</option>
+                  <option value="Agree">Agree</option>
+                  <option value="Strongly Agree">Strongly Agree</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mt-4 animate__animated animate__fadeInLeft">
+            <div class="card-body">
+               <div style="background-color: #007bff;">
+              <h5 class="card-title">Question 2: Do you think there are more career opportunities in computer-related fields than in other fields of study?
+            </h5>
+            </div>  
+            <br>
+              <div class="form-group">
+                <select class="form-control" name="question2" id="question2">
+                  <option value="Strongly Disagree">Strongly Disagree</option>
+                  <option value="Disagree">Disagree</option>
+                  <option value="Neutral">Neutral</option>
+                  <option value="Agree">Agree</option>
+                  <option value="Strongly Agree">Strongly Agree</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mt-4 animate__animated animate__fadeInLeft">
+            <div class="card-body">
+             <div style="background-color: #007bff;">
+              <h5 class="card-title">Question 3:Do you believe that computing-related disciplines are easier to learn, compared to non-computing ones?
+            </h5>
+            </div>  
+            <br>
+              <div class="form-group">
+                <select class="form-control" name="question3" id="question3">
+                  <option value="Strongly Disagree">Strongly Disagree</option>
+                  <option value="Disagree">Disagree</option>
+                  <option value="Neutral">Neutral</option>
+                  <option value="Agree">Agree</option>
+                  <option value="Strongly Agree">Strongly Agree</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          
+          <button type="button" class="btn btn-secondary mt-4 ml-2" onclick="showPage(1)">Back</button>
+          <button type="button" class="btn btn-primary mt-4" onclick="showPage(3)">Next</button>
+        </div>
+
+<!-- Page 3 -->
+<div id="page3" style="display:none;">
+          <div class="card mt-4 animate__animated animate__fadeInLeft">
+            <div class="card-body">
+               <div style="background-color: #007bff;">
+              <h5 class="card-title">Question 4: Did your family or friends encourage you to pursue a computing subject?</h5>
+            </div>  
+            <br>
+              <div class="form-group">
+                <select class="form-control" name="question4" id="question4">
+                  <option value="Strongly Disagree">Strongly Disagree</option>
+                  <option value="Disagree">Disagree</option>
+                  <option value="Neutral">Neutral</option>
+                  <option value="Agree">Agree</option>
+                  <option value="Strongly Agree">Strongly Agree</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mt-4 animate__animated animate__fadeInLeft">
+            <div class="card-body">
+                <div style="background-color: #007bff;">
+              <h5 class="card-title">Question 5: Are computer science's practical or theoretical applications more appealing to you?
+            </h5>
+            </div>  
+            <br>
+              <div class="form-group">
+                <select class="form-control" name="question5" id="question5">
+                  <option value="Strongly Disagree">Strongly Disagree</option>
+                  <option value="Disagree">Disagree</option>
+                  <option value="Neutral">Neutral</option>
+                  <option value="Agree">Agree</option>
+                  <option value="Strongly Agree">Strongly Agree</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mt-4 animate__animated animate__fadeInLeft">
+            <div class="card-body">
+               <div style="background-color: #007bff;">
+              <h5 class="card-title">Question 6: Did you have a positive experience with computing subjects in the past?
+            </h5>
+            </div>  
+            <br>
+              <div class="form-group">
+                <select class="form-control" name="question6" id="question6">
+                  <option value="Strongly Disagree">Strongly Disagree</option>
+                  <option value="Disagree">Disagree</option>
+                  <option value="Neutral">Neutral</option>
+                  <option value="Agree">Agree</option>
+                  <option value="Strongly Agree">Strongly Agree</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          
+           
+
+
+          
+          <!-- <button type="submit" class="btn btn-primary mt-4 animate__animated animate__fadeInLeft">Submit</button>//next -->
+          <button type="button" class="btn btn-secondary mt-4 ml-2" onclick="showPage(2)">Back</button>
+          <button type="button" class="btn btn-primary mt-4" onclick="showPage(4)">Next</button>
+        </div>
+
+
+
+<!-- page 04 -->
+
+
+<div id="page4" style="display:none;">
+    
+
+    <div class="card mt-4 animate__animated animate__fadeInLeft">
+        <div class="card-body">
+        <div style="background-color: #007bff;">
+          <h5 class="card-title">Question 7: Do you believe that computer-related disciplines provide greater chances for creativity and innovation compared to non-computer-related ones?
+        </h5>
+        </div>  
+        <br>
+          <div class="form-group">
+            <select class="form-control" name="question7" id="question7">
+              <option value="Strongly Disagree">Strongly Disagree</option>
+              <option value="Disagree">Disagree</option>
+              <option value="Neutral">Neutral</option>
+              <option value="Agree">Agree</option>
+              <option value="Strongly Agree">Strongly Agree</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+
+
+          <div class="card mt-4 animate__animated animate__fadeInLeft">
+            <div class="card-body">
+               <div style="background-color: #007bff;">
+              <h5 class="card-title">Question 8: Do you think computer courses are more important in the current society and the future employment market?
+            </h5>
+            </div>  
+            <br>
+              <div class="form-group">
+                <select class="form-control" name="question8" id="question8">
+                  <option value="Strongly Disagree">Strongly Disagree</option>
+                  <option value="Disagree">Disagree</option>
+                  <option value="Neutral">Neutral</option>
+                  <option value="Agree">Agree</option>
+                  <option value="Strongly Agree">Strongly Agree</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="card mt-4 animate__animated animate__fadeInLeft">
+            <div class="card-body">
+               <div style="background-color: hsl(211, 100%, 50%);">
+              <h5 class="card-title">Question 9 : What factors affected your choice to pursue computer studies instead of non-computing ones?</h5>
+            </div>  
+            <br>
+             
+              <div class="form-group">
+                <input class="form-control" type="text" name="question9" id="question9" list="question9-options">
+               
+              </div>
+              
+            </div>
+          </div>
+
+         
+
+          <div class="card mt-4 animate__animated animate__fadeInLeft">
+            <div class="card-body">
+               <div style="background-color: #007bff;">
+              <h5 class="card-title">Question 10: What are the benefits of studying computing courses over non-computing courses, in your opinion?</h5>
+            </div>  
+            <br>
+             
+              <div class="form-group">
+                <input class="form-control" type="text" name="question10" id="question10" list="question10-options">
+               
+              </div>
+              
+            </div>
+          </div>
+          
+          <button type="button" class="btn btn-secondary mt-4 ml-2" onclick="showPage(3)">Back</button>
+          <button type="submit" class="btn btn-primary mt-4 animate__animated animate__fadeInLeft">Submit</button>
+        </div>
+
+
+
+        </form>
+      </div>
+    </div>
+  </div>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<!-- Popper.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script>
+  var currentPage = 1;
+  
+  function showPage(pageNumber) {
+    var pageToHide = document.getElementById("page" + currentPage);
+    pageToHide.style.display = "none";
+    var pageToShow = document.getElementById("page" + pageNumber);
+    pageToShow.style.display = "block";
+    currentPage = pageNumber;
+  }
+  
+  function submitForm() {
+    var form = document.getElementById("health-form");
+    var formData = new FormData(form);
+    var results = "";
+    for (var pair of formData.entries()) {
+      results += pair[0]+": "+pair[1]+"\n";
+    }
+    alert(results);
+  }
+</script>
+</body>
+</html>

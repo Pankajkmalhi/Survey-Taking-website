@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Ethics Agreement</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Define the animation */
+      @keyframes fade-in-left {
+        from {
+          opacity: 0;
+          transform: translateX(-200px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      /* Apply the animation to the element */
+      .fade-in-left {
+        animation: fade-in-left 2s ease-out;
+      }
+       .error-message {
+      color: red;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center mt-5">
+        <div class="col-md-8 text-center fade-in-left">
+          <h1 class="mb-4">Ethics Agreement</h1>
+          <p class="lead">Please read the following statement carefully before proceeding with the survey.</p>
+          <div class="card mt-4">
+            <div class="card-body">
+              <h5 class="card-title">Ethics Agreement</h5>
+              <p class="card-text">
+                By participating in this survey, you agree to provide accurate and honest responses. Your participation is voluntary and you have the right to withdraw at any time. Your responses will be kept confidential and will only be used for research purposes.
+              </p>
+              <div class="form-check">
+  <input class="form-check-input agreement-checkbox" type="checkbox" value="" id="agree-checkbox">
+  <label class="form-check-label" for="agree-checkbox">
+    I agree to the Ethics Agreement
+  </label>
+  <br>
+  <input class="form-check-input agreement-checkbox" type="checkbox" value="" id="disagree-checkbox">
+  <label class="form-check-label" for="disagree-checkbox">
+    I do not agree to the Ethics Agreement
+  </label>
+  <div id="error-message"></div> <!-- New element for displaying error message -->
+</div>
+
+              
+              <button class="btn btn-primary mt-4" id="start-survey-btn" disabled>Start Survey</button>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script>
+// Disable the Start Survey button initially
+document.getElementById("start-survey-btn").disabled = true;
+
+// Enable the Start Survey button if
+const agreementCheckboxes = document.querySelectorAll(".form-check-input");
+const startSurveyBtn = document.getElementById("start-survey-btn");
+const errorMessage = document.getElementById("error-message"); // Get the error message element
+
+agreementCheckboxes.forEach(function(checkbox) {
+  checkbox.addEventListener("change", function() {
+    if (this.checked) {
+      agreementCheckboxes.forEach(function(otherCheckbox) {
+        if (otherCheckbox !== checkbox) {
+          otherCheckbox.checked = false;
+        }
+      });
+      startSurveyBtn.disabled = false;
+      errorMessage.innerHTML = ""; // Clear the error message
+    } else {
+      startSurveyBtn.disabled = true;
+      if (checkbox.id === "disagree-checkbox") { // Display error message if the "I do not agree" checkbox is unchecked
+        errorMessage.innerHTML = "You must agree to the Ethics Agreement to proceed.";
+      } else {
+        errorMessage.innerHTML = ""; // Clear the error message
+      }
+    }
+  });
+});
+
+// Add click event listener to the Start Survey button
+startSurveyBtn.addEventListener("click", function() {
+  const agreeCheckbox = document.getElementById("agree-checkbox");
+  if (agreeCheckbox.checked) {
+    // Navigate to the new page if the user has agreed
+    window.location.href = "survey.html";
+  } else {
+    // Display error message if the "I agree" checkbox is unchecked
+    errorMessage.innerHTML = "You must agree to the Ethics Agreement to proceed.";
+    errorMessage.style.color = "red"; // Set the color to red
+  }
+});
+
+</script>
+
+</body>
+</html> 

@@ -1,0 +1,77 @@
+/* center the survey form */
+#survey-form {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+body {
+  background-color: #F2F2F2; /* replace with your preferred background color */
+}
+
+
+
+/* Add a keyframe animation */
+@keyframes shake {
+0% {
+  transform: translateX(0);
+}
+25% {
+  transform: translateX(-5px);
+}
+50% {
+  transform: translateX(5px);
+}
+75% {
+  transform: translateX(-5px);
+}
+100% {
+  transform: translateX(0);
+}
+}
+/* Add a background color to the body when the form is submitted */
+body.submitted {
+background-color: #e6f7ff;
+}
+
+/* Apply the animation to the form when it is submitted */
+form {
+animation: shake 0.5s;
+}
+
+
+/* Add a hover effect to the radio buttons */
+input[type="radio"]:hover + label::before {
+transform: scale(1.2);
+}
+
+/* Add a transition to the radio button labels */
+label {
+transition: all 0.2s ease-in-out;
+}
+
+
+
+/* add some padding to the form */
+#survey-form .card {
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+/* add some margin to the submit button */
+#survey-form button[type="submit"] {
+  margin-top: 20px;
+}
+
+/* style the error message */
+label.error {
+  font-size: 14px;
+  color: #dc3545;
+}
+
+/* style the success message */
+#success-message {
+  display: none;
+  font-size: 18px;
+  color: #28a745;
+  margin-top: 20px;
+}
